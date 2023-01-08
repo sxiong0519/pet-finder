@@ -1,0 +1,20 @@
+.pets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.pet_card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid;
+    flex: 1;
+}
+
+.default_petimg, .pet_image{
+    height: auto;
+    width: 15em;
+    border-radius: 5px;
+}
