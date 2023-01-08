@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getPetById } from "../../action/Pet/petActions";
 import photoComingSoon from '../../images/photoComingSoon.jpg';
+import OrderForm from "../Inventory/OrderForm";
 
 
 
 const SinglePet = () => {
+    const navigate = useNavigate();
     const petId = useParams();
-    const [pet, setPet] = useState({})
+    const [pet, setPet] = useState({});
     console.log(pet, 'this works')
 
     useEffect (() => {
@@ -29,6 +31,7 @@ const SinglePet = () => {
                         {pet.category ? pet.category.name : <br/>}
                     </div>
             </section>
+            <OrderForm petId={pet.id}/>
         </div>
     )
 }
