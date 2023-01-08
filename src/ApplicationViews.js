@@ -2,6 +2,7 @@
 import { Routes, Route} from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
 import HomePage from "./pages/HomePage";
+import OrderForm from "./pages/Inventory/OrderForm";
 import PetForm from "./pages/Pet/PetForm";
 import SinglePet from "./pages/Pet/SinglePet";
 
@@ -15,6 +16,7 @@ export const ApplicationViews = () => {
         <Route exact path="/" element={<HomePage/>}/>
         <Route path ="/pet/detail/:id" element={<SinglePet/>}/>
         <Route path="/pet/create" element={<PetForm/>}/>
+        <Route path="/order/create/:petId" element={<OrderForm/>}/>
       </Routes>
     </div>
 );

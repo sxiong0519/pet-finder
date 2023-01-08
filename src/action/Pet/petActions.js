@@ -28,3 +28,15 @@ export const createNewPet = (pet) => {
         return resp.json();
     })
 }
+
+export const updateStatus = (pet, status) => {
+    return fetch(`${baseURL}/${pet}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: new URLSearchParams({
+            "status": `${status}`
+        })
+    }).then(resp => {
+        return resp.json();
+    })
+}
