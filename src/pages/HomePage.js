@@ -2,35 +2,49 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AllPets from './Pet/AllPets';
 
+
+
 const HomePage = () => {
-    
+    //#region States
+    //automatically set as available as landing homepage filtered status
     const [status, setStatus] = useState("Available");
     const statuses = ['Available','Pending', 'Sold'];
     const navigate = useNavigate();
+    //#endregion
 
+    //#region Hooks
+    //need to refresh based on filtered status chosen
     useEffect(() => {
-        console.log('click')
-    }, [status])
+        console.log('status change')
+    }, [status]);
+    //#endregion
 
+    //#region JSX Element
     return (
         <div className="App">
-            <button onClick={() => navigate("/pet/create")}>Add Pet</button>
-            <fieldset>
-            <div className="form-group">
-                <label htmlFor="status">Filter: </label>
-                <select  name="status" id="status" value={status} className="form-control" onChange={(e) => {console.log(e.target.value); setStatus(e.target.value)}}>
-                <option value="">Pick Status</option>
-                {statuses.map(c => (
-                    <option key={c} value={c}>
-                    {c}
-                    </option>
-                ))}
-                </select>
+            <div className='nav-bar'>
+                <button className='add-btn' onClick={() => navigate("/pet/create")}>Add Pet</button>
+                <fieldset className='filter-option'>
+                    <div className="form-group">
+                        <label htmlFor="status">Filter: </label>
+                        <select  name="status" id="status" value={status} className="form-control" onChange={(e) => { 
+                                setStatus(e.target.value); }}>
+                        <option>Pick Status</option>
+                        {statuses.map(s => (
+                            <option key={s} value={s}>
+                            {s}
+                            </option>
+                        ))};
+                        </select>
+                    </div>
+                </fieldset>
             </div>
-            </fieldset>
-        <AllPets status={status}/>
+            <div>
+                <AllPets status={status}/>
+            </div>
         </div>
     );
-}
+};
+//#endregion
 
 export default HomePage;

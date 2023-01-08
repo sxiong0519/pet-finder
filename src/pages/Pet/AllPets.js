@@ -1,29 +1,38 @@
 import PetCard from "./PetCard";
-import "../../styles/Pet/pet.css"
+import "../../styles/Pet/Pet.css"
 import { useEffect, useState } from "react";
 import { getPetByStatus } from "../../action/Pet/petActions";
 
 
 const AllPets = (status) => {
+    //#region States
     const [pets, setPets] = useState([]);
+    //identifying only unique pets by id 
     const uniquePets = [...new Map(pets.map((item) => [item["id"], item])).values()];
+    //#endregion
 
+    //#region Hooks
     useEffect(() => {
-        getPetByStatus(status.status.toLowerCase()).then(p => setPets(p));
-}, [status])
+        //status currently listed camel case - lowercase everything before passing through to api call
+        getPetByStatus(status.status.toLowerCase())
+        .then(p => setPets(p));
+    }, [status])
+    //#endregion
     
-    
-
+    //#region JSX Element
     return (
         <div>
             <center>
-                <h3>{status.status} Pets</h3>
+            {status.status === 'Pick Status' ? "" :<h3> {status.status} Pets</h3>}
             </center>
             <div className="pets">
-                {uniquePets.map(pet => { return <PetCard key={pet.id} pet={pet} /> })}
+                {uniquePets.map(pet => { 
+                    return <PetCard key={pet.id} pet={pet} /> })
+                };
             </div>
       </div>
     )
-}
+};
+//#endregion
 
 export default AllPets;

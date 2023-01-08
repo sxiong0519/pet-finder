@@ -1,14 +1,22 @@
 .pets {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.pet_cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
 }
 
 .pet_card {
+    display: flex;
+    flex-direction: column;
     margin: 10px;
     padding: 10px;
     border: 1px solid;
-    width: fit-content;
+    flex-grow: 4;
 }
 
 .default_petimg, .pet_image{
