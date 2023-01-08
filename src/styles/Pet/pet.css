@@ -1,16 +1,14 @@
 .pets {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-left: 5em;
-    margin-right: 5em;
+    justify-content: center;
 }
 
 .pet_card {
     margin: 10px;
     padding: 10px;
     border: 1px solid;
-    flex: 1;
+    width: fit-content;
 }
 
 .default_petimg, .pet_image{

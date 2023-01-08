@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Pet/pet.css"
-import photoComingSoon from '../../images/photoComingSoon.jpg'
+import photoComingSoon from '../../images/photoComingSoon.jpg';
 
 
 const PetCard = ({ pet }) => {
@@ -16,7 +16,7 @@ useEffect(() => {
                         <h3><center>{pet.name}</center></h3>
                         <Link to={`/pet/detail/${pet.id}`}>
                             <div className="petimg">
-                                {pet.photoUrls.find(x => x.includes('.png')) || pet.photoUrls.find(x => x.includes('jpg')) ? <img src={pet.photoUrls[0]} alt={pet.name} className="pet_image" /> : 
+                                {pet.photoUrls.find(x => x.includes('.png')) || pet.photoUrls.find(x => x.includes('.j')) ? <img src={pet.photoUrls[0]} alt={pet.name} className="pet_image" /> : 
                                 <img className="default_petimg" src={photoComingSoon} alt={pet.name}/>}
                             </div>    
                         </Link>
