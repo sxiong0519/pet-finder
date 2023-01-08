@@ -1,0 +1,33 @@
+
+.logo {
+  height: 8em;
+  pointer-events:visibleStroke;
+  border-radius: 50%;
+  width: auto;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-btn {
+  width:fit-content;
+}
+
+.filter-option {
+  width: fit-content;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-logo {
+  display:flex;
+}
+
+fieldset {
+  border: 0;
+}
