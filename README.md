@@ -1,7 +1,11 @@
 ### Built With 
 * ReactJS
+* Node
 * CSS
 * [PetStoreApi](https://petstore.swagger.io/#/)
+
+## Local Developement
+The PetFinder web app is written in React and uses create-react-app
 
 ## Getting Started
 
@@ -19,7 +23,7 @@ To get a local copy up and running follow these simple steps.
 
     `git clone git@github.com:sxiong0519/pet-finder.git`
 
-* npm 
+* Install npm
 
     `npm install`
     
