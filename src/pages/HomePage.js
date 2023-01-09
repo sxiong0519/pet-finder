@@ -6,7 +6,6 @@ import AllPets from './Pet/AllPets';
 
 const HomePage = () => {
     //#region States
-    //automatically set as available as landing homepage filtered status
     const [status, setStatus] = useState("");
     const statuses = ['Available','Pending', 'Sold'];
     const navigate = useNavigate();

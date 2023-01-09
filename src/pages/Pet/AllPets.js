@@ -17,7 +17,7 @@ const AllPets = (status) => {
         if(status.webStatus && !status.status){
             getPetByStatus(status.webStatus.toLowerCase())
             .then(p => setPets(p));
-        }else {
+        } else {
             getPetByStatus(status.status.toLowerCase())
             .then(p => setPets(p));
         }

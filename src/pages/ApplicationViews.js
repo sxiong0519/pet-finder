@@ -14,7 +14,7 @@ import NavBar from "./NavBar";
 export const ApplicationViews = () => {
 
 
-    //logo & welcome on this component to always show throughout all pages
+    //logo on this component to always show throughout all pages
     
     //#region JSX Elements
     return (

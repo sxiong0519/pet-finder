@@ -42,6 +42,7 @@ const Login = () => {
     }
     //#endregion
 
+    //#region JSX Element
     return (
         <div className="loginform">
             <center>
@@ -86,5 +87,6 @@ const Login = () => {
         </div>                
     )
 };
+//#endregion
 
 export default Login;

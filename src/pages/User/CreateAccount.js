@@ -37,6 +37,8 @@ const CreateAccount = () => {
           }
         };         
     //#endregion
+
+    //#region JSX Element
     return (
             <div className="loginform">
             <center>
@@ -92,6 +94,6 @@ const CreateAccount = () => {
         </div>
     )
 };
-
+//#endregion
 
 export default CreateAccount;
