@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AllPets from './Pet/AllPets';
 
 
@@ -7,9 +7,10 @@ import AllPets from './Pet/AllPets';
 const HomePage = () => {
     //#region States
     //automatically set as available as landing homepage filtered status
-    const [status, setStatus] = useState("Available");
+    const [status, setStatus] = useState("");
     const statuses = ['Available','Pending', 'Sold'];
     const navigate = useNavigate();
+    const webStatus = useParams();
     //#endregion
 
     //#region Hooks
@@ -23,15 +24,15 @@ const HomePage = () => {
     return (
         <div className="App">
             <div className='nav-bar'>
-                <button className='add-btn' onClick={() => navigate("/pet/create")}>Add Pet</button>
+            {localStorage.getItem("userIdentity") ? <button className='btns add-btn' onClick={() => navigate("/pet/create")}>Add Pet</button> : ""}
                 <fieldset className='filter-option'>
                     <div className="form-group">
                         <label htmlFor="status">Filter: </label>
-                        <select  name="status" id="status" value={status} className="form-control" onChange={(e) => { 
+                        <select name="status" id="status" value={status} className="form-control" onChange={(e) => { 
                                 setStatus(e.target.value); }}>
                         <option>Pick Status</option>
                         {statuses.map(s => (
-                            <option key={s} value={s}>
+                            <option className="status_options" key={s} value={s}>
                             {s}
                             </option>
                         ))};
@@ -40,7 +41,7 @@ const HomePage = () => {
                 </fieldset>
             </div>
             <div>
-                <AllPets status={status}/>
+                <AllPets webStatus={webStatus.status} status={status}/>
             </div>
         </div>
     );

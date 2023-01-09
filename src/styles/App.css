@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 .logo {
   height: 8em;
   pointer-events:visibleStroke;
   border-radius: 50%;
   width: auto;
+  justify-content: center;
 }
 
 .App {
   display: flex;
   flex-direction: column;
+  font-family: 'Staatliches', cursive;
 }
 
 .add-btn {
@@ -26,8 +29,25 @@
 
 .nav-logo {
   display:flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 fieldset {
   border: 0;
+}
+
+.btns, select, input {
+  font-family: 'Staatliches', cursive;
+  color: #3b4e50;
+  width: auto;
+}
+
+.loginform {
+  font-family: 'Staatliches', cursive;
+  color: #3b4e50;
+}
+
+.save-btn {
+  margin-right: 10px;
 }

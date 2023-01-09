@@ -36,10 +36,10 @@ const OrderForm = (id) => {
         if(pet.status === 'available'){
             createStoreOrder(newOrder)
             .then(() => updateStatus(pet.id, "pending"))
-            .then(() => navigate(`/`));
+            .then(() => navigate(`/pending`));
         } else {
             updateStatus(pet.id, "sold")
-            .then(() => navigate(`/`));
+            .then(() => navigate(`/sold`));
         }
     }
     //#endregion
@@ -47,13 +47,14 @@ const OrderForm = (id) => {
     // #region JSX Element
     return (
         <div>
-            {pet.status === 'available' ? <button className="btns" onClick={() => {
-                completeOrder();}}>Apply</button> : 
-                (pet.status === 'pending' ? <button className="btns" onClick={() => {
-                completeOrder();}}>Sold</button> : "")
+            <br/>
+            {pet.status === 'available' && localStorage.getItem("userIdentity") ? <button className="btns" onClick={() => {
+                completeOrder();}}>Apply</button> :
+                (pet.status === 'pending' && localStorage.getItem("userIdentity") ? <button className="btns" onClick={() => {
+                completeOrder();}}>Sold</button> : (localStorage.getItem("userIdentity") === null && pet.status === 'available' ? 'Interested? Login to apply!' : ''))
             }
         </div>
     )
-}
+};
 //#endregion
 export default OrderForm;

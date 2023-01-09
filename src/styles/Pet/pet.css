@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
 .pets {
     display: flex;
     flex-wrap: wrap;
@@ -19,8 +21,16 @@
     flex-grow: 4;
 }
 
-.default_petimg, .pet_image{
+.default_petimg, .pet_image {
     height: auto;
     width: 15em;
     border-radius: 5px;
+}
+
+.single_pet {
+    display: flex;
+}
+
+.petdetails {
+    font-family: 'Staatliches', cursive;
 }

@@ -21,17 +21,14 @@ const PetCard = ({ pet }) => {
                                 {
                                 //confirming photourls are actual .png and .jpg/.jpeg images - then if multiple pictures, use first listed as display photo
                                 //if photo passes condition but returns an error - use default coming soon pic
-                                pet.photoUrls?.find(x => x.includes('.png')) || pet.photoUrls?.find(x => x.includes('.j')) ? <img src={pet.photoUrls[0]} alt={pet.name} 
+                                pet.photoUrls?.length > 0 ? <img src={pet.photoUrls[0]} alt={pet.name} 
                                     onError={(e) => {e.target.src = `${photoComingSoon}`}} className="pet_image" /> : 
                                 <img className="default_petimg" src={photoComingSoon} alt={pet.name}/>}
                             </center>
                         </div>        
-                        <Link to={`/pet/detail/${pet.id}`}>
-                            {pet.name ? <h3><center>{pet.name}</center></h3> : <h3>UnNamed</h3>}
-                        </Link>                    
-                        {pet.status}
-                        <br/>
-                        {pet.category ? pet.category.name : <br/>}
+                        <Link className="navbar__link" to={`/pet/detail/${pet.id}`}>
+                            {pet.name ? <h3><center>{pet.name}</center></h3> : <h3><center>UnNamed</center></h3>}
+                        </Link> 
                     </div>
             </section>
         </div>

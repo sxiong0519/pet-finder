@@ -44,7 +44,7 @@ const PetForm = () => {
                 status: 'available'          
           }
           createNewPet(newPet)
-            .then(() => navigate("/"))
+            .then(() => navigate("/available"))
           }
         };
     //#endregion
