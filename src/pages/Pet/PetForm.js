@@ -8,7 +8,7 @@ const PetForm = () => {
     //#region States
     const navigate = useNavigate();
     //created categories list 
-    const categories = ['Dog', 'Cat', 'Bird', 'Reptile', 'Bunnies', 'Other'];
+    const categories = ['dog', 'cat', 'bird', 'reptile', 'bunny', 'other'];
     const [pet, setPet] = useState({
         name: "",
         photoUrls: "",
@@ -81,8 +81,8 @@ const PetForm = () => {
                         </select>
                     </div>
                 </fieldset>
-            <div className="buttons">
-                <button className="btns" onClick={(event) => {
+            <div className="petformbuttons">
+                <button className="btns save-btn" onClick={(event) => {
                     event.preventDefault();
                     addNewPet();
                 }}>

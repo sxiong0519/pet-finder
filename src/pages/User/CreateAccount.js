@@ -25,10 +25,10 @@ const CreateAccount = () => {
             const newUser = {
                 id: Math.floor(Math.random()*100) + 1,
                 username: user.username,
+                password: user.password,
                 firstName: user.firstName,
                 lastName: user.lastName,
                 email: user.email,
-                password: user.password,
                 phone: user.phone,
                 userStatus: 0
             }
