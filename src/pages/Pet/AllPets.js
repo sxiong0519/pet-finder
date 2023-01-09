@@ -9,16 +9,17 @@ const AllPets = (status) => {
     const [pets, setPets] = useState([]);
     //identifying only unique pets by id 
     const uniquePets = [...new Map(pets.map((item) => [item["id"], item])).values()];
+    
     //#endregion
 
     //#region Hooks
     useEffect(() => {
         //status currently listed camel case - lowercase everything before passing through to api call
         if(status.webStatus && !status.status){
-            getPetByStatus(status.webStatus.toLowerCase())
+            getPetByStatus(status.webStatus)
             .then(p => setPets(p));
         } else {
-            getPetByStatus(status.status.toLowerCase())
+            getPetByStatus(status.status)
             .then(p => setPets(p));
         }
     }, [status])
@@ -34,7 +35,8 @@ const AllPets = (status) => {
             )}
             </center>
             <div className="pets">
-                {uniquePets.map(pet => { 
+                {status.searchTerm?.length > 0 ? uniquePets.filter(pet => pet.category?.name.includes(status.searchTerm)).map(pet => { 
+                    return <PetCard key={pet.id} pet={pet} /> }) : uniquePets.map(pet => { 
                     return <PetCard key={pet.id} pet={pet} /> })
                 }
             </div>

@@ -34,3 +34,19 @@
 .petdetails {
     font-family: 'Staatliches', cursive;
 }
+
+.petForm {
+    font-family: 'Staatliches', cursive;
+    margin-left: 5em ;
+}
+
+.petformbuttons {
+    margin-left: 1em;
+}
+
+.petimg {
+    margin-right: 5px;
+}
+.goback{
+    margin-left: -15px;
+}

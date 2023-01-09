@@ -37,7 +37,7 @@ fieldset {
   border: 0;
 }
 
-.btns, select, input {
+.btns, select, input, textarea {
   font-family: 'Staatliches', cursive;
   color: #3b4e50;
   width: auto;
@@ -50,4 +50,8 @@ fieldset {
 
 .save-btn {
   margin-right: 10px;
+}
+
+.categorysearch {
+  width: 25em;
 }

@@ -1,23 +1,34 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AllPets from './Pet/AllPets';
+import "./../styles/App.css"
 
 
 
 const HomePage = () => {
     //#region States
-    const [status, setStatus] = useState("");
-    const statuses = ['Available','Pending', 'Sold'];
+    const [status, setStatus] = useState();
+    const statuses = ['available','pending', 'sold'];
     const navigate = useNavigate();
-    const webStatus = useParams();
+    const webStatus = useParams();    
+    const [searchTerm, setSearchTerm] = useState();
     //#endregion
 
     //#region Hooks
     //need to refresh based on filtered status chosen
     useEffect(() => {
-        console.log('status change')
+        //clear search term when status changes
+        setSearchTerm("");
+        console.log('status change');
     }, [status]);
     //#endregion
+
+    //#region Helper Functions
+    const handleSearch = (e) => {
+        const newSearch = e.target.value
+        setSearchTerm(newSearch);
+    }
+    //#endregion 
 
     //#region JSX Element
     return (
@@ -40,7 +51,16 @@ const HomePage = () => {
                 </fieldset>
             </div>
             <div>
-                <AllPets webStatus={webStatus.status} status={status}/>
+                <center>
+                    <br/>
+                    {status === 'Pick Status' || !webStatus.status && !status ? "" : 
+                    <input type="text" id="categorysearch" 
+                    className="categorysearch" 
+                    value={searchTerm} 
+                    onChange={handleSearch}  
+                    placeholder="Search by general category. Ex: Dog" />}
+                </center>
+                <AllPets searchTerm={searchTerm} webStatus={webStatus.status} status={status}/>
             </div>
         </div>
     );

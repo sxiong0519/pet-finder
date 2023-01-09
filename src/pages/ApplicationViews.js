@@ -8,7 +8,7 @@ import logo from '../images/logo.jpg';
 import "./../styles/App.css"
 import Login from "./User/Login";
 import CreateAccount from "./User/CreateAccount";
-import NavBar from "./NavBar";
+import NavBar from "../components/Nav/NavBar";
 
 
 export const ApplicationViews = () => {
@@ -21,14 +21,14 @@ export const ApplicationViews = () => {
       <div>
         <div className='nav-logo'>
           <div>
-          <Link to={"/"}>
-            <center>
-            <img className='logo' src={logo}/>
-            </center>
-          </Link>
+            <Link to={"/"}>
+              <center>
+              <img className='logo' src={logo}/>
+              </center>
+            </Link>
           </div>
           <div>
-          <NavBar/> 
+            <NavBar/>
           </div>
         </div>
         <Routes>

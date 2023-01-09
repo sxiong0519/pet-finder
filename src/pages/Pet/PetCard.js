@@ -29,6 +29,10 @@ const PetCard = ({ pet }) => {
                         <Link className="navbar__link" to={`/pet/detail/${pet.id}`}>
                             {pet.name ? <h3><center>{pet.name}</center></h3> : <h3><center>UnNamed</center></h3>}
                         </Link> 
+                        <br/>
+                        {pet.status ? pet.status : 'unavailable'}
+                        <br/>
+                        {pet.category ? pet.category.name : (pet.category?.name.includes("string") ? 'unknown' : 'unknown')}
                     </div>
             </section>
         </div>

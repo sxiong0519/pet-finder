@@ -7,7 +7,6 @@ import "../../styles/App.css"
 
 const Login = () => {
     //#region State
-    //the returned object will persist for the full lifetime of the component.
     const [login, setLogin] = useState({});
     const [user, setUser] = useState({});
     const [showError, setShowError] = useState(false);
