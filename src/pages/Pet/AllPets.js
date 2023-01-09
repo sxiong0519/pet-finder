@@ -14,8 +14,13 @@ const AllPets = (status) => {
     //#region Hooks
     useEffect(() => {
         //status currently listed camel case - lowercase everything before passing through to api call
-        getPetByStatus(status.status.toLowerCase())
-        .then(p => setPets(p));
+        if(status.webStatus && !status.status){
+            getPetByStatus(status.webStatus.toLowerCase())
+            .then(p => setPets(p));
+        } else {
+            getPetByStatus(status.status.toLowerCase())
+            .then(p => setPets(p));
+        }
     }, [status])
     //#endregion
     
@@ -23,12 +28,15 @@ const AllPets = (status) => {
     return (
         <div>
             <center>
-            {status.status === 'Pick Status' ? "" :<h3> {status.status} Pets</h3>}
+            {status.status === 'Pick Status' ? "Filter to view pets" : 
+                (!status.webStatus && !status.status ? 'Filter to view pets' :
+                (status.webStatus && !status.status ? <h2> {status.webStatus} Pets</h2> : <h2> {status.status} Pets</h2>)
+            )}
             </center>
             <div className="pets">
                 {uniquePets.map(pet => { 
                     return <PetCard key={pet.id} pet={pet} /> })
-                };
+                }
             </div>
       </div>
     )

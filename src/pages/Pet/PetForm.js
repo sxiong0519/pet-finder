@@ -7,7 +7,7 @@ import { createNewPet } from "../../action/Pet/petActions"
 const PetForm = () => {
     //#region States
     const navigate = useNavigate();
-    //created categories list to ensure consistency
+    //created categories list 
     const categories = ['Dog', 'Cat', 'Bird', 'Reptile', 'Bunnies', 'Other'];
     const [pet, setPet] = useState({
         name: "",
@@ -44,7 +44,7 @@ const PetForm = () => {
                 status: 'available'          
           }
           createNewPet(newPet)
-            .then(() => navigate("/"))
+            .then(() => navigate("/available"))
           }
         };
     //#endregion
