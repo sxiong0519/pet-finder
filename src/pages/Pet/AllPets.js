@@ -9,8 +9,6 @@ const AllPets = (status) => {
     const [pets, setPets] = useState([]);
     //identifying only unique pets by id 
     const uniquePets = [...new Map(pets.map((item) => [item["id"], item])).values()].filter(x => x.id.toString().length < 10);
-    
-    console.log(uniquePets.filter(x => x.id.toString().length > 10), 'this is this')
     //#endregion
 
     //#region Hooks
@@ -35,7 +33,7 @@ const AllPets = (status) => {
                 (status.webStatus && !status.status ? <h2> {status.webStatus} Pets</h2> : <h2> {status.status} Pets</h2>)
             )}
             <div className="pets">
-                {status.searchTerm?.length > 0 ? uniquePets.filter(pet => pet.category?.name.includes(status.searchTerm)).map(pet => { 
+                {status.searchTerm?.length > 0 ? uniquePets.filter(pet => pet.category?.name?.toLowerCase().includes(status.searchTerm)).map(pet => { 
                     return <PetCard key={pet.id} pet={pet} /> }) : uniquePets.map(pet => { 
                     return <PetCard key={pet.id} pet={pet} /> })
                 }

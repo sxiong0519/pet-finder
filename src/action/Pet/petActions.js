@@ -56,3 +56,17 @@ export const updateStatus = (pet, status) => {
         console.error(error);
     }
 }
+
+export const editPet = (pet) => {
+    try { 
+        return fetch(`${baseURL}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(pet)
+        }).then(resp => {
+            return resp.json();
+        })
+    } catch (error) {
+        console.error(error);
+    }
+}
