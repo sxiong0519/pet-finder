@@ -9,8 +9,9 @@ const NavBar = () => {
 
     //#region Helper Functions
     const logout = () =>  {
-      localStorage.removeItem("petFinder_user")
-      localStorage.removeItem("userIdentity")
+      localStorage.removeItem("petFinder_user");
+      localStorage.removeItem("userIdentity");
+      localStorage.removeItem("FirstLast");
     };
     //#endregion
     return (

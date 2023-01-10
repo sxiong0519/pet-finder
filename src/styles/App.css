@@ -43,15 +43,29 @@ fieldset {
   width: auto;
 }
 
-.loginform {
-  font-family: 'Staatliches', cursive;
-  color: #3b4e50;
-}
-
-.save-btn {
-  margin-right: 10px;
-}
 
 .categorysearch {
   width: 25em;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.filterpets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.items {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.save-btn {
+  margin-left: 12px;
+  margin-right: 5px;
 }

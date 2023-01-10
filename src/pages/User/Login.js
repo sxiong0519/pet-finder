@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { userLogin } from "../../action/User/userAction";
-import "../../styles/App.css"
+import "../../styles/Login/Login.css"
 
 
 
@@ -29,9 +29,10 @@ const Login = () => {
             .then(user => {
                 setUser(user);
                 if (login.password === user.password) {
-                    localStorage.setItem("petFinder_user", `${user.username}`)
-                    localStorage.setItem("userIdentity", `${user.userStatus}`)
-                    navigate("/")
+                    localStorage.setItem("petFinder_user", `${user.username}`);
+                    localStorage.setItem("userIdentity", `${user.userStatus}`);
+                    localStorage.setItem("FirstLast", `${user.firstName} ${user.lastName}`);
+                    navigate("/");
                 } else {
                     navigate("/login")
                     setShowError(true)
@@ -44,8 +45,7 @@ const Login = () => {
     //#region JSX Element
     return (
         <div className="loginform">
-            <center>
-            {showError === true ? <h3>Incorrect username/password. Please try again.</h3> : <h2>Please sign in</h2>}
+            {showError === true ? <h3>Incorrect username/password. Please try again.</h3> : <h2>Welcome back! Please sign in!</h2>}
             <div className='login-form'>
                 <div className='login'>
                     <form className="form--login">
@@ -79,10 +79,9 @@ const Login = () => {
                     </form>
                 </div>
                 <div className="link--register">
-                    <Link to="/register">Not a member yet?</Link>
+                    <Link className="navbar__link" to="/register">Not a member yet?</Link>
                 </div>
             </div>
-            </center>
         </div>                
     )
 };

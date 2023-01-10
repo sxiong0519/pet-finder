@@ -1,38 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
+.allpets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .pets {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
-.pet_cards {
-    display: flex;
-    flex-wrap: wrap;
-    width: 20%;
-}
-
 .pet_card {
-    display: flex;
-    flex-direction: column;
     margin: 10px;
     padding: 10px;
-    border: 1px solid;
-    flex-grow: 4;
-}
-
-.default_petimg, .pet_image {
-    height: auto;
+    border: 1px solid pink;
     width: 15em;
-    border-radius: 5px;
+    border-radius: 10%;
 }
 
-.single_pet {
-    display: flex;
+.pet {
+    width: 15em; 
+    align-items: center;
 }
+
 
 .petdetails {
     font-family: 'Staatliches', cursive;
+    width:auto;
 }
 
 .petForm {
@@ -44,9 +40,41 @@
     margin-left: 1em;
 }
 
-.petimg {
-    margin-right: 5px;
-}
 .goback{
     margin-left: -15px;
+}
+
+.petimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pet-image {
+    height: 15em;
+    overflow: hidden;
+}
+
+.default_petimg, .pet_image {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.singlepetimage {
+    height: 25em;
+    display: flex;
+}
+
+.single_pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single_image {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
 }

@@ -18,13 +18,11 @@ export const ApplicationViews = () => {
     
     //#region JSX Elements
     return (
-      <div>
+      <div className='items'>
         <div className='nav-logo'>
-          <div>
+          <div className="logo">
             <Link to={"/"}>
-              <center>
-              <img className='logo' src={logo}/>
-              </center>
+              <img className='logo' alt='logo' src={logo}/>
             </Link>
           </div>
           <div>
