@@ -15,7 +15,6 @@
 .pet_card {
     margin: 10px;
     padding: 10px;
-    border: 1px solid pink;
     width: 15em;
     border-radius: 10%;
 }
@@ -23,6 +22,8 @@
 .pet {
     width: 15em; 
     align-items: center;
+    border: 2px solid gray;
+    background-color: gray;
 }
 
 
@@ -48,6 +49,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    padding: 10px 0px 10px 0;
 }
 
 .pet-image {
@@ -62,7 +65,7 @@
 }
 
 .singlepetimage {
-    height: 25em;
+    height: 20em;
     display: flex;
 }
 

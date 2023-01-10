@@ -34,6 +34,7 @@ export const ApplicationViews = () => {
           <Route path="/:status" element={<HomePage/>}/>
           <Route path ="/pet/detail/:id" element={<SinglePet/>}/>
           <Route path="/pet/create" element={<PetForm/>}/>
+          <Route path="/pet/create/:id" element={<PetForm/>}/>
           <Route path="/order/create/:petId" element={<OrderForm/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route exact path="/register" element={<CreateAccount/>}/>
