@@ -50,16 +50,14 @@ const HomePage = () => {
                     </div>
                 </fieldset>
             </div>
-            <div>
-                <center>
+            <div className='filterpets'>
                     <br/>
-                    {status === 'Pick Status' || !webStatus.status && !status ? "" : 
+                    {status === 'Pick Status' || (!webStatus.status && !status) ? "" : 
                     <input type="text" id="categorysearch" 
                     className="categorysearch" 
                     value={searchTerm} 
                     onChange={handleSearch}  
                     placeholder="Search by general category. Ex: Dog" />}
-                </center>
                 <AllPets searchTerm={searchTerm} webStatus={webStatus.status} status={status}/>
             </div>
         </div>

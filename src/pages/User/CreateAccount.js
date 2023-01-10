@@ -41,7 +41,6 @@ const CreateAccount = () => {
     //#region JSX Element
     return (
             <div className="loginform">
-            <center>
             <form className="createAccount">
                 <h1 className="createAccount__title">Create Account</h1>
                 <fieldset>
@@ -90,7 +89,6 @@ const CreateAccount = () => {
                     <button className="btns" onClick={() => navigate("/")}>Cancel</button>
                 </div>
             </form>
-            </center>
         </div>
     )
 };
